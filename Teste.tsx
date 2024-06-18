@@ -3,8 +3,7 @@ import { View, TextInput, StyleSheet, Alert, TouchableOpacity } from 'react-nati
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { Picker } from '@react-native-picker/picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import Button from './shared/components/button/Button';
-import notifee, { TimestampTrigger, TriggerType, RepeatFrequency, AndroidImportance } from '@notifee/react-native';
+import Button from './src/shared/components/button/Button';
 
 const AlarmCreateScreen = () => {
   const navigation = useNavigation();
@@ -67,14 +66,6 @@ const AlarmCreateScreen = () => {
 
       if (response.ok) {
         Alert.alert('Sucesso', `Alarme ${alarm ? 'atualizado' : 'cadastrado'} com sucesso!`);
-
-        // Agende a notificação
-        const intervalHours = 8; // A cada 8 horas
-        const title = `Hora de tomar ${medicationName}`;
-        const body = `Tome ${dosage} de ${medicationName} agora.`;
-
-        await scheduleMedicationReminder(title, body, alarmDate, intervalHours);
-
         navigation.navigate('Alarmes');
       } else {
         const errorData = await response.json();
@@ -85,28 +76,6 @@ const AlarmCreateScreen = () => {
       console.error('Erro ao salvar alarme:', error);
       Alert.alert('Erro', 'Ocorreu um erro ao salvar o alarme. Por favor, tente novamente.');
     }
-  };
-
-  const scheduleMedicationReminder = async (title, body, startTime, intervalHours) => {
-    const trigger: TimestampTrigger = {
-      type: TriggerType.TIMESTAMP,
-      timestamp: startTime.getTime(),
-      repeatFrequency: RepeatFrequency.HOURLY,
-      alarmManager: {
-        allowWhileIdle: true,
-      },
-    };
-
-    await notifee.createTriggerNotification(
-      {
-        title,
-        body,
-        android: {
-          channelId: 'default',
-        },
-      },
-      trigger,
-    );
   };
 
   return (
