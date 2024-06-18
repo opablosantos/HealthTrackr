@@ -1,0 +1,25 @@
+{
+    "seq_usuario": 1,
+    "nom_alarme": "Teste alarme sete",
+    "dat_alarme": "2024-10-05T03:00:00.000Z",
+    "hr_alarme": "2024-05-10T03:00:00.000Z",
+    "repeticao_alarme": 8,
+    "tempo_repeticao": "2024-05-10T03:00:00.000Z",
+    "sit_alarme": "1",
+    "nom_medicamento": "Dipirona",
+    "dosagem": "500 mg",
+    "frequencia": "3 vezes ao dia"
+}
+
+{
+  "seq_usuario": 1,
+  "nom_alarme": "Dipirona - 3 vezes ao dia",
+  "dat_alarme": "2024-05-15T04:05:15.263Z",
+  "hr_alarme": "2024-05-15T11:00:00.000Z",
+  "repeticao_alarme": 8,
+  "tempo_repeticao": "2024-05-15T04:05:15.263Z",
+  "sit_alarme": "1",
+  "nom_medicamento": "Dipirona",
+  "dosagem": "500",
+  "frequencia": "3 vezes ao dia"
+}

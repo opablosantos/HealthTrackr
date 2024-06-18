@@ -1,0 +1,9 @@
+{
+  "name": "healthtrackrapp",
+  "displayName": "HealthTrackr",
+  "plugins": [
+    "expo-font",
+    "@notifee/react-native"
+  ],
+  "icon": "/src/assets/images/icon.png"
+}
