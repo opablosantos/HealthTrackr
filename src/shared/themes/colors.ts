@@ -28,3 +28,8 @@ export const greenTheme = {
     green80: '#64E4C3',
     green100: '#117572'
 }
+
+export const blueTheme = {
+    blue80: '#4A90E2',
+    blue100: '#0F4C81'
+}

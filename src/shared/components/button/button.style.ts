@@ -26,13 +26,13 @@ export const GradientButton = styled(LinearGradient)<ButtonContainerProps>`
     align-items: center;
     ${(props) => props.margin ? `margin: ${props.margin};` : ''};
 `
-
+ 
 export const ButtonSecondary = styled(ButtonContainer)<ButtonContainerProps>`
     ${(props) => props.margin ? `margin: ${props.margin};` : ''};
 
     background-color: transparent;
     border-width: 1px;
-    border-color: ${theme.colors.mainTheme.primary}
+    border-color: ${theme.colors.greenTheme.green100};
 `
 
 export const ButtonDisabled = styled(ButtonContainer)<ButtonContainerProps>`

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, FlatList, Linking } from 'react-native';
 import Button from './shared/components/button/Button';
 import { useNavigation } from '@react-navigation/native';
+import ButtonBack from './shared/components/button/ButtonBack';
 
 const MedicationSearchScreen = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -74,7 +75,7 @@ const MedicationSearchScreen = () => {
         keyExtractor={item => item.idProduto.toString()}
       />
 
-      <Button title="Voltar" onPress={() => navigation.navigate('Home')} />
+      <ButtonBack title="Voltar" onPress={() => navigation.navigate('Home')} />
     </View>
   );
 };

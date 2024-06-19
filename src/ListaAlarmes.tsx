@@ -3,6 +3,7 @@ import { View, Text, FlatList, TouchableOpacity, Alert, ActivityIndicator, Style
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { Icon } from './shared/components/icon/Icon';
 import Button from './shared/components/button/Button';
+import ButtonBack from './shared/components/button/ButtonBack';
 
 const AlarmListScreen = () => {
   const [alarms, setAlarms] = useState([]);
@@ -77,7 +78,7 @@ const AlarmListScreen = () => {
       />
       <View>
         <Button margin="8px" title="CADASTRAR NOVO ALARME" onPress={() => navigation.navigate('CadastrarAlarme')}/>
-        <Button margin="8px" title="VOLTAR" onPress={() => navigation.navigate('Home')}/>
+        <ButtonBack margin="8px" title="VOLTAR" onPress={() => navigation.navigate('Home')}/>
       </View>
     </View>
   );

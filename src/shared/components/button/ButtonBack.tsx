@@ -13,7 +13,7 @@ interface ButtonProps extends TouchableOpacityProps{
     onPress?: () => void;
 }
 
-const Button = ({title, type, disabled, loading, margin, onPress, ...props}: ButtonProps) => {
+const ButtonBack = ({title, type, disabled, loading, margin, onPress, ...props}: ButtonProps) => {
     const handleOnPress = () => {
         if (!loading && !disabled && onPress) {
             onPress();
@@ -51,7 +51,7 @@ const Button = ({title, type, disabled, loading, margin, onPress, ...props}: But
                     <GradientButton 
                         start= {{x: 0.0, y: 0.0}}
                         end = {{x: 1.0, y: 1.0}}
-                        colors= {[theme.colors.greenTheme.green100, theme.colors.greenTheme.green80]}
+                        colors= {[theme.colors.blueTheme.blue100, theme.colors.blueTheme.blue80]}
                     >
                         {renderText(theme.colors.neutralTheme.white)}
                     </GradientButton>
@@ -61,4 +61,4 @@ const Button = ({title, type, disabled, loading, margin, onPress, ...props}: But
  
 }
 
-export default Button;
+export default ButtonBack;

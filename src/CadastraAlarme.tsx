@@ -5,6 +5,7 @@ import { Picker } from '@react-native-picker/picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Button from './shared/components/button/Button';
 import notifee, { TimestampTrigger, TriggerType, RepeatFrequency, AndroidImportance } from '@notifee/react-native';
+import ButtonBack from './shared/components/button/ButtonBack';
 
 const AlarmCreateScreen = () => {
   const navigation = useNavigation();
@@ -71,7 +72,7 @@ const AlarmCreateScreen = () => {
         // Agende a notificação
         const intervalHours = 8; // A cada 8 horas
         const title = `Hora de tomar ${medicationName}`;
-        const body = `Tome ${dosage} de ${medicationName} agora.`;
+        const body = `Tome ${medicationName} ${dosage}mg agora.`;
 
         await scheduleMedicationReminder(title, body, alarmDate, intervalHours);
 
@@ -157,7 +158,7 @@ const AlarmCreateScreen = () => {
       <View style={styles.buttonContainer}>
         <Button title="Salvar Alarme" onPress={handleSaveAlarm} style={styles.button} />
         <View style={styles.separator} />
-        <Button title="Voltar" onPress={() => navigation.navigate('Alarmes')} style={styles.button} />
+        <ButtonBack title="Voltar" onPress={() => navigation.navigate('Alarmes')} style={styles.button} />
       </View>
     </View>
   );
